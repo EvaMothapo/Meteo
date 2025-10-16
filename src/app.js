@@ -22,21 +22,20 @@ function refreshWeather(response) {
 function formatDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
-   if (minutes < 10) {
-     minutes = `0${minutes}`;
-     let days = [
-       "Sunday",
-       "Monday",
-       "Tuesday",
-       "Wednesday",
-       "Thursday",
-       "Friday",
-       "Saturday",
-     ];
-     let day = days[date.getDay()];
-     return `${day} ${hours}:${minutes}, `;
-   }
-  
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${day} ${hours}:${minutes}, `;
 }
 function searchCity(city) {
   let apiKey = "31948e150bf00b4a5d0t27b4o0e755ac";
